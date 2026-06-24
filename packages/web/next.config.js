@@ -5,7 +5,10 @@ const nextConfig = {
     unoptimized: true,
   },
   experimental: {
-    serverComponentsExternalPackages: ['firebase-admin'],
+    serverComponentsExternalPackages: ['firebase-admin', '@prisma/client', 'prisma'],
+  },
+  outputFileTracingIncludes: {
+    '/api/*': ['./node_modules/.prisma/client/*'],
   },
 }
 
