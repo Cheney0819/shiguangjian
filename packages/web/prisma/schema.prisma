@@ -74,6 +74,7 @@ model Message {
 
   @@index([pairId, createdAt])
   @@index([senderId])
+  @@index([deletedAt])
 }
 
 // ============ 时间胶囊 ============
@@ -97,6 +98,7 @@ model TimeCapsule {
 
   @@index([receiverId, status])
   @@index([triggerTime, status])
+  @@index([status])
 }
 
 // ============ 共享日记 ============
@@ -154,6 +156,7 @@ model SharedMedia {
   uploaderId   String
 
   @@index([albumId, createdAt])
+  @@index([uploaderId])
 }
 
 // ============ 预密钥 ============
