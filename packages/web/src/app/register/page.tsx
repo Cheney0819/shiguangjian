@@ -11,6 +11,7 @@ import BlackHoleCanvas from '@/components/BlackHoleCanvas';
 
 export default function RegisterPage() {
   const [nickname, setNickname] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
@@ -37,7 +38,7 @@ export default function RegisterPage() {
 
     try {
       // 使用昵称作为用户名和邮箱
-      const email = `${nickname}@shiguangjian.app`;
+      // 使用用户输入的邮箱
       const { user, token } = await authApi.register({
         username: nickname,
         email,
